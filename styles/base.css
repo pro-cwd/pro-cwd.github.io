@@ -270,6 +270,7 @@ a:hover h4 {
 }
 #hero {
   position: relative;
+  width: 960px;
 }
 
 #hero img {
