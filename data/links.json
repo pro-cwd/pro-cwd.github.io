@@ -1,0 +1,90 @@
+{
+    "weeks": [
+      {
+        "week": "Week 1",
+        "links": [
+          {
+            "url": "https://github.com/pro-cwd/skills-introduction-to-github",
+            "title": "Introduction to github"
+          },
+          {
+            "url": "https://run.plnkr.co/preview/clmjl5p1r00043b6pfdtyl4xb/",
+            "title": "object Method this"
+          },
+          {
+            "url": "https://codepen.io/pro-cwd/pen/zYypaEq",
+            "title": "The window object"
+          }
+        ]
+      },
+      {
+        "week": "Week 2",
+        "links": [
+          {
+            "url": "#",
+            "title": "W2"
+          },
+          {
+            "url": "#",
+            "title": "W2"
+          },
+          {
+            "url": "#",
+            "title": "W2"
+          }
+        ]
+      },
+      {
+        "week": "Week 3",
+        "links": [
+          {
+            "url": "#",
+            "title": "W3"
+          },
+          {
+            "url": "#",
+            "title": "W3"
+          },
+          {
+            "url": "#",
+            "title": "W3"
+          }
+        ]
+      },
+      {
+        "week": "Week 4",
+        "links": [
+          {
+            "url": "#",
+            "title": "W4"
+          },
+          {
+            "url": "#",
+            "title": "W4"
+          },
+          {
+            "url": "#",
+            "title": "W4"
+          }
+        ]
+      },
+      {
+        "week": "Week 5",
+        "links": [
+          {
+            "url": "#",
+            "title": "W5"
+          },
+          {
+            "url": "#",
+            "title": "W5"
+          },
+          {
+            "url": "#",
+            "title": "W5"
+          }
+        ]
+      }
+    ]
+  }
+  
