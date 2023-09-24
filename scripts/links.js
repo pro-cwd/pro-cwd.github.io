@@ -1,5 +1,5 @@
 const baseURL = "https://pro-cwd.github.io/wdd230/";
-const linksURL = "https://pro-cwd.github.io/wdd230/data/links.json";
+const linksURL = "https://pro-cwd.github.io/data/links.json";
 const links = document.querySelector('#links');
 
 async function getLinksJson() {
