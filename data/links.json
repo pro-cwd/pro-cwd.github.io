@@ -21,8 +21,8 @@
         "week": "Week 2",
         "links": [
           {
-            "url": "#",
-            "title": "W2"
+            "url": "https://github.com/pro-cwd/pro-cwd.github.io/blob/main/week2/content-template-element.html",
+            "title": "Template element"
           },
           {
             "url": "#",
@@ -42,12 +42,12 @@
             "title": "Forms"
           },
           {
-            "url": "#",
-            "title": "W3"
+            "url": "https://pro-cwd.github.io/week3/form.html",
+            "title": "FormData Object"
           },
           {
-            "url": "#",
-            "title": "W3"
+            "url": "https://pro-cwd.github.io/week3/fetch-basics.html",
+            "title": "Fetch API"
           }
         ]
       },
