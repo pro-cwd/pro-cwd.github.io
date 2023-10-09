@@ -1,0 +1,25 @@
+{
+  "name": "city-pulse",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\""
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "vite": "^4.4.5",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "prettier": "^3.0.3",
+    "scriptlint": "^3.0.0"
+  }
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --brand: #2E40B5;
+    --black: #302B27;
+    --gray: #F5F3F5;
+    --highlight: #F6CACA;
+    --backg: #FAF9F7;
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+}
+
+.label__logo {
+    display: block;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.label__section {
+    background-color: var(--backg);
+    grid-column: 1 / 2;
+}
+
+.label__section h3 {
+    padding: 0 50px;
+}
+
+.label__title {
+    display: flex;
+    padding: 0 50px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.arrow {
+    transition: transform 0.5s ease-in-out;
+}
+
+.label__subtitle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: auto;
+}
+.label__subtitle img {
+    width: 100%;
+    max-width: 33px;
+}
+
+.bck-color {
+    background-color: var(--highlight);
+    border-radius: 0 25px 25px 0;
+}
+
+.first-chld {
+    color: var(--brand);
+}
+
+.label__subtitle-title img {
+    border-radius: 50px;
+}
+
+.label__subtitle-title, .label__subtitle-feature  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.label__subtitle-title h4, .label__subtitle-feature h4  {
+    padding-left: 5px;
+}
