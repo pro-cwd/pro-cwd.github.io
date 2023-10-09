@@ -11,22 +11,34 @@
     
     <aside class="label__section">
         <img class="label__logo" src="./images/city-pulse-logo.svg" alt="logotipo city pulse app">
-        <section class="label__section">
+        <section class="label__section drop-section">
             <h3>MY LABELS</h3>
-            <div>
-                <div id="lineArrow" class="label__title first-chld bck-color">
-                    <h4>News</h4>
-                    <img id="rotateArrow" class="arrow" src="./images/right.svg" alt="arrow active">
+            <div class="sidenav">
+                <button class="dropdown-btn lineArrow">Dropdown
+                    <div class="arrow-container">
+                        <div class="arrow rotateArrow"><img src="./images/right.svg" alt=""></div>
+                    </div>
+                </button>
+                <div class="dropdown-container">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
                 </div>
-                <div class="label__subtitle first-chld">
-                    <div class="label__subtitle-title">
-                        <img width="33" height="33" src="https://via.placeholder.com/33x33" />
-                        <h4 class="news-name">Extra</h4>
-                    </div>
-                    <div class="label__subtitle-feature">
-                        <span>2</span>
-                        <h4>new</h4>
-                    </div>
+                <button class="dropdown-btn lineArrow">Dropdown2
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+                <button class="dropdown-btn lineArrow">Dropdown3
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
                 </div>
             </div>
         </section>
