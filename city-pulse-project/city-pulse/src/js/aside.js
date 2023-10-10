@@ -1,18 +1,18 @@
 // rotate arrow
 
-const lineArrow = document.querySelector(".lineArrow")
-const arrow = document.querySelector(".rotateArrow");
-let rotated = false;
+// const lineArrow = document.querySelector(".lineArrow")
+// const arrow = document.querySelector(".rotateArrow");
+// let rotated = false;
 
-lineArrow.addEventListener("click", () => {
-    if (!rotated) {
-        arrow.style.transform = "rotate(90deg)";
-        rotated = true;
-    } else {
-        arrow.style.transform = "rotate(0deg)";
-        rotated = false;
-    }
-});
+// lineArrow.addEventListener("click", () => {
+//     if (!rotated) {
+//         arrow.style.transform = "rotate(90deg)";
+//         rotated = true;
+//     } else {
+//         arrow.style.transform = "rotate(0deg)";
+//         rotated = false;
+//     }
+// });
 
 // script.js
 
