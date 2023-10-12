@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation API</title>
+</head>
+<body>
+    <h2>JavaScript Geolocation</h2>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+<div id="map-container">
+    <iframe
+        width="600"
+        height="400"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?q=YOUR_LOCATION&key=AIzaSyAVKpNP9-ziSt-mUuYGka0O_Zlb5fjGmpk"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<p id="demo"></p>
+<script src="../scripts/geolocation.js"></script>
+</body>
+</html>
