@@ -1,5 +1,4 @@
 
-alert("hola mundo")
 function draw() {
     const canvas = document.getElementById("canvas");
     if (canvas.getContext) {
