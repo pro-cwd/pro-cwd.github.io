@@ -72,12 +72,12 @@
         "week": "Week 5",
         "links": [
           {
-            "url": "#",
-            "title": "W5"
+            "url": "https://pro-cwd.github.io/week5/canvas.html",
+            "title": "Canvas API"
           },
           {
-            "url": "#",
-            "title": "W5"
+            "url": "https://pro-cwd.github.io/week5/geolocation.html",
+            "title": "Web API"
           },
           {
             "url": "#",
