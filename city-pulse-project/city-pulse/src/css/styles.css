@@ -24,7 +24,10 @@ body {
 .label__logo {
     display: block;
     margin: auto;
-    padding: 50px 0;
+    padding: 50px 10px;
+    width: 100%;
+    height: auto;
+    max-width: 182px;
 }
 
 .label__section {
@@ -37,9 +40,9 @@ body {
     padding: 0 50px;
 }
 
-.drop-section {
+/* .drop-section {
     overflow-x: hidden;
-}
+} */
 
 .label__title {
     display: flex;
