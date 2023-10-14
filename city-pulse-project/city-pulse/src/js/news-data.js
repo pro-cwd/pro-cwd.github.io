@@ -6,30 +6,32 @@ const apiUrl = `https://newsdata.io/api/1/news?country=${country}&apikey=${apiKe
 async function fetchNews() {
   try {
     const response = await fetch(apiUrl);
-    const data = await response.json();
-    // console.log(data);
-
-    if (data.status === "ok") {
-      const newsContainer = document.getElementById("news-container");
-      const articles = data.data.results;
-      console.log(articles);
-      articles.forEach((article) => {
-        const articleElement = document.createElement("div");
-        articleElement.innerHTML = `
-                    <h2>${article.title}</h2>
-                    <p>${article.description}</p>
-                    <a href="${article.url}" target="_blank">Read more</a>
-                 `;
-
-        newsContainer.appendChild(articleElement);
-      });
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      displayResults(data);
     } else {
-      console.error("Error fetching news data:", data.message);
+      throw Error(await response.text());
     }
   } catch (error) {
-    console.error("An error occurred while fetching news data:", error);
+    console.log(error);
   }
 }
-
 // Call the fetchNews function to retrieve and display news data
 fetchNews();
+
+function displayResults(data) {
+  const newsContainer = document.getElementById("news-container");
+  const articles = data.results;
+
+  articles.forEach((article) => {
+    const articleElement = document.createElement("div");
+    articleElement.innerHTML = `
+                <h2>${article.title}</h2>
+                <p>${article.description}</p>
+                <a href="${article.link}" target="_blank">Read more</a>
+                `;
+
+    newsContainer.appendChild(articleElement);
+  });
+}
