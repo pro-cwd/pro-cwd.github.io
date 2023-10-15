@@ -1,3 +1,5 @@
+import { checkDate } from "./utils.mjs";
+
 const apiKey = "pub_310972aca62cdce0a07f51c386509267aab51";
 const country = "ec";
 const apiUrl = `https://newsdata.io/api/1/news?country=${country}&apikey=${apiKey}`;
@@ -25,13 +27,35 @@ function displayResults(data) {
   const articles = data.results;
 
   articles.forEach((article) => {
-    const articleElement = document.createElement("div");
-    articleElement.innerHTML = `
+    const sectionElement = document.createElement("section");
+    sectionElement.setAttribute("class", "sec__margin");
+    sectionElement.innerHTML = `
                 <h2>${article.title}</h2>
                 <p>${article.description}</p>
-                <a href="${article.link}" target="_blank">Read more</a>
+                
+
+            <div class="banner__title">
+                <h1>${article.keywords[0]}</h1>
+                <div>change view &#xf03a;</div>
+            </div>
+            <h4>Titulares</h4>
+            <div class="section__news">
+                <h5 class="section__data">${checkDate}</h5>
+                <div class="grid__box">
+                    <input class="grid__check check-size" type="checkbox">
+                    <div class="grid__text">${article.title}</div>
+                    <small class="grid__data flex__data">
+                        <div id="dateTag" class="date">${article.pubDate}</div>
+                        <div class="publish">${article.source_id}</div>
+                        </small>
+                    <a href="${article.link}" target="_blank">Read more</a>
+                    <div class="grid__img">
+                        <img style="background-color: black;" width="186" height="112" src="./images/Image1.png" alt="img. new">
+                    </div>
+                </div>
+            </div>
                 `;
 
-    newsContainer.appendChild(articleElement);
+    newsContainer.appendChild(sectionElement);
   });
 }
