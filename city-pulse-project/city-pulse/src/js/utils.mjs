@@ -1,6 +1,7 @@
-function checkDate() {
+export function checkDate() {
   // Get the date value from the HTML tag
   const dateTag = document.getElementById("dateTag");
+  console.log(dateTag);
   const dateText = dateTag.innerText;
 
   // Get the current date
@@ -18,4 +19,4 @@ function checkDate() {
   }
 }
 
-checkDate();
+// checkDate();
