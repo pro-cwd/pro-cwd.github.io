@@ -10,7 +10,7 @@ async function fetchNews() {
     const response = await fetch(apiUrl);
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
+      console.log("datos", data);
       displayResults(data);
     } else {
       throw Error(await response.text());
@@ -35,7 +35,7 @@ function displayResults(data) {
             </div>
             <h4>Titulares</h4>
             <div class="section__news">
-                <h5 class="section__data">${article.country[0]}</h5>
+                <h5 class="section__data data__status"></h5>
                 <div class="grid__box">
                     <input class="grid__check check-size" type="checkbox">
                     <div class="grid__text">${article.title}</div>
@@ -50,7 +50,7 @@ function displayResults(data) {
                 </div>
             </div>
                 `;
+                newsContainer.appendChild(sectionElement);
+              });
     checkDate();
-    newsContainer.appendChild(sectionElement);
-  });
 }
