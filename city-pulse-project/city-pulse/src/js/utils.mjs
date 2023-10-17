@@ -1,3 +1,4 @@
+
 export function checkDate() {
   // Get the date value from the HTML tag
   const dateTag = document.getElementById("dateTag");
@@ -23,8 +24,6 @@ export function checkDate() {
   return formattedCurrentDate;
 }
 
-// checkDate();
-
 function extractDateFromText(inputText) {
   // Define a regular expression pattern to match a date in yyyy-mm-dd format
   const datePattern = /(\d{4})-(\d{2})-(\d{2})/;
@@ -49,3 +48,7 @@ function extractDateFromText(inputText) {
     return null;
   }
 }
+
+//call fetch API
+
+

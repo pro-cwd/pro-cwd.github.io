@@ -5,7 +5,7 @@ const country = "ec";
 const apiUrl = `https://newsdata.io/api/1/news?country=${country}&apikey=${apiKey}`;
 
 // Function to fetch and display news data
-async function fetchNews() {
+export async function fetchNews() {
   try {
     const response = await fetch(apiUrl);
     if (response.ok) {

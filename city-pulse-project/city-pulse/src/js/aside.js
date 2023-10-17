@@ -1,55 +1,4 @@
-// rotate arrow
 
-// const lineArrow = document.querySelector(".lineArrow")
-// const arrow = document.querySelector(".rotateArrow");
-// let rotated = false;
-
-// lineArrow.addEventListener("click", () => {
-//     if (!rotated) {
-//         arrow.style.transform = "rotate(90deg)";
-//         rotated = true;
-//     } else {
-//         arrow.style.transform = "rotate(0deg)";
-//         rotated = false;
-//     }
-// });
-
-// script.js
-
-// // Get all the elements with the "highlightable" class
-// const highlightableElements = document.querySelectorAll(".highlightable");
-
-// // Add a click event listener to each element
-// highlightableElements.forEach((element) => {
-//     element.addEventListener("click", () => {
-//         // Toggle the "highlighted" class
-//         element.classList.toggle("highlighted");
-//         document.getElementById("thisDropdown").classList.toggle("show");
-
-//         // Remove the "highlighted" class from other elements
-//         highlightableElements.forEach((el) => {
-//             if (el !== element) {
-//                 el.classList.remove("highlighted");
-//             }
-//         });
-//     });
-// });
-
-// // Handle clicks outside of the text lines
-// window.onclick = function(event) {
-//     if (!event.target.matches('.highlightable')) {
-//         let dropdowns = document.getElementsByClassName("highlightable");
-//         let i;
-//         for (i = 0; i < dropdowns.length; i++) {
-//             let openDropdown = dropdowns[i];
-//             if (openDropdown.classList.contains('highlighted')) {
-//                 openDropdown.classList.remove('highlighted');
-//             }
-//         }
-//     }
-// };
-
-//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 let dropdown = document.getElementsByClassName("dropdown-btn");
 let i;
 
@@ -64,5 +13,61 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
+// read later menu
+
+// Add event listeners to "READ LATER" buttons
+const readLaterButtons = document.querySelectorAll('.read-later-button');
+
+readLaterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const menuItem = this.parentElement.querySelector('span').textContent;
+        saveMenuItem(menuItem);
+    });
+});
+
+// Function to save the menu item to local storage
+function saveMenuItem(title) {
+    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+    savedItems.push(title);
+    localStorage.setItem('savedItems', JSON.stringify(savedItems));
+    updateSidebar();
+}
+
+// Function to update the sidebar menu
+function updateSidebar() {
+    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+
+    const sidebar = document.getElementById('saved-items');
+    sidebar.innerHTML = '';
+
+    savedItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        listItem.addEventListener('click', function () {
+            openLink(item); // Implement the openLink function to handle navigation.
+        });
+        sidebar.appendChild(listItem);
+    });
+}
+
+// Implement the openLink function to handle navigation when a sidebar item is clicked
+function openLink(item) {
+    // You need to define the URLs for each menu item and navigate to the appropriate page.
+    // You can use a switch statement or an object mapping for this.
+    switch (item) {
+        case "Menu Item 1":
+            window.location.href = "link_to_menu_item_1.html";
+            break;
+        case "Menu Item 2":
+            window.location.href = "link_to_menu_item_2.html";
+            break;
+        // Add more cases as needed.
+    }
+}
+
+// Initialize the sidebar on page load
+updateSidebar();
+
 
 
