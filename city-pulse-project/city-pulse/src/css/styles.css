@@ -122,9 +122,9 @@ body {
     height: 100%;
     padding-top: 20px;
     margin-right: 15%;
-  }
+}
 
-  /* Style the sidenav links and the dropdown button */
+/* Style the sidenav links and the dropdown button */
 .sidenav a, .dropdown-btn {
     padding: 6px 8px 6px 45px;
     font-size: 1rem;
@@ -135,34 +135,34 @@ body {
     text-align: left;
     cursor: pointer;
     outline: none;
-  }
-  
-  /* On mouse-over */
-  .sidenav a:hover, .dropdown-btn:hover {
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
     color: var(--black);
     background-color: var(--hover);
     border-radius: 0 25px 25px 0;
-  }
+}
 
-  /* Add an active class to the active dropdown button */
+/* Add an active class to the active dropdown button */
 .active {
     background-color: var(--highlight);
     color: var(--black);
     border-radius: 0 25px 25px 0;
-  }
-  
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown-container {
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
     display: none;
     padding-left: 8px;
-  }
+}
 
-  /* section newsk */
- /* .section__news {
+/* section newsk */
+/* .section__news {
     display: flex;
     align-items: flex-start;
     gap: 9px;
- } */
+} */
 
 .themes__article {
     grid-column: 2/3;
@@ -180,8 +180,8 @@ body {
     gap: 5px 5px;
     grid-auto-flow: row;
     grid-template-areas:
-        "grid__check grid__text grid__img"
-        "grid__check grid__data grid__img";
+    "grid__check grid__text grid__img"
+    "grid__check grid__data grid__img";
 }
 
 .grid__check { grid-area: grid__check; }
@@ -213,4 +213,13 @@ input.check-size {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+}
+
+section h4, .section__data {
+    color: var(--brand);
+}
+
+.grid__text {
+    font-size: 1.4em;
+    font-weight: 800;
 }

@@ -37,7 +37,7 @@ function displayResults(data) {
             <div class="section__news">
                 <h5 class="section__data data__status"></h5>
                 <div class="grid__box">
-                    <input class="grid__check check-size" type="checkbox">
+                    <button class="read-later-button"><i class="material-icons">bookmark_border</i></button>
                     <div class="grid__text">${article.title}</div>
                     <small class="grid__data flex__data">
                         <div id="dateTag" class="date">${article.pubDate}</div>

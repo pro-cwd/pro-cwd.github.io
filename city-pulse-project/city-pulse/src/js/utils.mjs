@@ -20,6 +20,7 @@ export function checkDate() {
     document.querySelector(".data__status").textContent = afterExtractDate;
     console.log(afterExtractDate);
   }
+  return formattedCurrentDate;
 }
 
 // checkDate();
