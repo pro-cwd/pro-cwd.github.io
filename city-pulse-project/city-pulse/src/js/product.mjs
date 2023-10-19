@@ -1,0 +1,28 @@
+export default class NewsFetcher {
+    constructor(apiKey, country) {
+      this.apiKey = apiKey;
+      this.country = country;
+      this.apiUrl = `https://newsdata.io/api/1/news?country=${this.country}&apikey=${this.apiKey}`;
+    }
+  
+    async fetchNews() {
+      try {
+        const response = await fetch(this.apiUrl);
+        if (response.ok) {
+          const data = await response.json();
+          console.log("datos", data);
+          this.displayResults(data);
+        } else {
+          throw Error(await response.text());
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+    displayResults(data) {
+      // Implement your logic to display the results here
+      // For example, you can render the news data to the UI.
+    }
+  }
+  

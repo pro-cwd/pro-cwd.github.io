@@ -1,9 +1,7 @@
-const apiUrl = import.meta.env.VITE_API_URL
 import { checkDate } from "./utils.mjs";
-// const apiKey = "pub_310972aca62cdce0a07f51c386509267aab51";
-// const country = "ec";
-// const apiUrl = `https://newsdata.io/api/1/news?country=${country}&apikey=${apiKey}`;
-console.log(apiUrl)
+const apiKey = "pub_310972aca62cdce0a07f51c386509267aab51";
+const country = "ec";
+const apiUrl = `https://newsdata.io/api/1/news?country=${country}&apikey=${apiKey}`;
 
 // Function to fetch and display news data
 export async function fetchNews() {
