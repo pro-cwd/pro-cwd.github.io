@@ -14,6 +14,7 @@ export default defineConfig({
       },
     },
   },
+  envPrefix: "VITE_",
   plugins: [
     envCompatible
   ]
