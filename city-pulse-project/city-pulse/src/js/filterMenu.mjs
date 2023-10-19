@@ -9,24 +9,21 @@ export function themeMenu (data) {
         };
         
           // Create the button HTML
-        const buttonHTML = `
-            <button class="dropdown-btn lineArrow">${theme.keywords[0]}
-                <div class="arrow-container">
+        const buttonElement = document.createElement("button");
+        const dropElement = document.createElement("div");
+        buttonElement.setAttribute("class", "dropdown-btn lineArrow");
+        dropElement.setAttribute("class", "dropdown-container");
+        buttonElement.innerHTML = `
+            ${theme.keywords[0]}
+            <div class="arrow-container">
                 <div class="arrow"><span>${apiData.buttonCount}</span><img src="./images/right.svg" alt="flecha"></div>
-                </div>
-            </button>
-            `;
-        
-          // Create the dropdown container HTML
-            const dropdownContainerHTML = `
-            <div class="dropdown-container">
-                <a href="${theme.link}">${theme.creator[0]}<span>${apiData.linkCount}</span></a>
             </div>
             `;
-        
-          // Combine the button and dropdown container HTML
-            const combinedHTML = buttonHTML + dropdownContainerHTML;
-            themeResult.appendChild(combinedHTML);
+        dropElement.innerHTML = `
+            <a href="${theme.link}">${theme.creator[0]}<span>${apiData.linkCount}</span></a>
+        `;
+            
+            themeResult.appendChild(buttonElement, dropElement);
             // return combinedHTML;
         });
         
