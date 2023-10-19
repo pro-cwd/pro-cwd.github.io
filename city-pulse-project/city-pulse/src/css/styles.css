@@ -53,9 +53,10 @@ body {
 }
 
 .arrow {
-    float: right;
     padding-right: 6px;
-    transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .lineArrow {
     position: relative;
@@ -222,4 +223,8 @@ section h4, .section__data {
 .grid__text {
     font-size: 1.4em;
     font-weight: 800;
+}
+
+.later-margin {
+    margin-top: 2rem;
 }
