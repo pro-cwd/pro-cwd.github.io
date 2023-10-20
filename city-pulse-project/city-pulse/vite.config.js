@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import envCompatible from "vite-plugin-env-compatible";
+import replace from '@rollup/plugin-replace';
 
 export default defineConfig({
   root: "src/",
@@ -16,6 +16,9 @@ export default defineConfig({
   },
   envPrefix: "VITE_",
   plugins: [
-    envCompatible
-  ]
+    replace({
+      'process.env.VITE_APIKEY': JSON.stringify(process.env.VITE_APIKEY),
+      'process.env.VITE_COUNTRY': JSON.stringify(process.env.VITE_COUNTRY),
+    }),
+  ],
 });

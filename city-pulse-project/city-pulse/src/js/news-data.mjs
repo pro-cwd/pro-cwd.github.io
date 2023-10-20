@@ -9,7 +9,7 @@ export function displayResults(data) {
     sectionElement.setAttribute("class", "sec__margin");
     sectionElement.innerHTML = `
             <div class="banner__title">
-                <h1>${article.keywords[0]}</h1>
+                <h2>${article.keywords[0]}</h2>
             </div>
             <h4>Titulares</h4>
             <div class="section__news">

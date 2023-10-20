@@ -1,4 +1,4 @@
-//import { displayResults } from "./news-data.mjs";
+import { displayResults } from "./news-data.mjs";
 import { themeMenu } from "./filterMenu.mjs" // Import the displayResults function
 
 export default class NewsFetcher {
@@ -14,7 +14,7 @@ export default class NewsFetcher {
       if (response.ok) {
         const data = await response.json();
         console.log("datos", data);
-        // displayResults(data);
+        displayResults(data);
         themeMenu(data);
       } else {
         throw Error(await response.text());
