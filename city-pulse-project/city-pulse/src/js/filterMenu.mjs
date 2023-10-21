@@ -1,5 +1,6 @@
+import { dropDown } from "./aside";
 
-  export function themeMenu(data) {
+export function themeMenu(data) {
     const themeResult = document.getElementById("theme-title");
     const themes = data.results;
 
@@ -15,7 +16,8 @@
             uniqueParentContent.add(themeKeyword);
 
             // Count the number of times this parent content is repeated
-            const count = themes.filter(t => t.keywords[0] === themeKeyword).length;
+            const relatedThemes = themes.filter(t => t.keywords[0] === themeKeyword);
+            const count = relatedThemes.length;
 
             const apiData = {
                 buttonCount: count, // Set the count
@@ -33,14 +35,18 @@
                     <i class="arrow"><span>${apiData.buttonCount}</span><img src="./images/right.svg" alt="flecha"></i>
                 </i>
             `;
-            dropElement.innerHTML = `
-                <a href="${theme.link}">${theme.creator[0]}<span>${apiData.linkCount}</span></a>
-            `;
-            
+            const themeList = document.createElement("ul");
+            relatedThemes.forEach((relatedTheme) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<a href="${relatedTheme.link}">${relatedTheme.title}</a>`;
+                themeList.appendChild(listItem);
+            });
+            dropElement.appendChild(themeList);
             themeResult.appendChild(buttonElement);
             themeResult.appendChild(dropElement);
         }
     });
+    dropDown();
 }
 
 

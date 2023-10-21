@@ -1,15 +1,14 @@
-// read later menu
-
 // Add event listeners to "READ LATER" buttons
 const readLaterButtons = document.querySelectorAll('.read-later-button');
 
-readLaterButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const menuItem = this.parentElement.querySelector('span').textContent;
-        saveMenuItem(menuItem);
+export function readLater () {
+    readLaterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const menuItem = this.parentElement.querySelector('span').textContent;
+            saveMenuItem(menuItem);
+        });
     });
-});
-
+};
 // Function to save the menu item to local storage
 function saveMenuItem(title) {
     const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];

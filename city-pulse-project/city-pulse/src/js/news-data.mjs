@@ -1,4 +1,5 @@
 import { checkDate } from "./utils.mjs";
+import { readLater } from "./readLater.mjs";
 
 export function displayResults(data) {
   const newsContainer = document.getElementById("news-container");
@@ -31,4 +32,5 @@ export function displayResults(data) {
                 newsContainer.appendChild(sectionElement);
               });
     checkDate();
-}
+    readLater();
+};
