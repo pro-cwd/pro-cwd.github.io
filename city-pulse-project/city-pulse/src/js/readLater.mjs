@@ -1,54 +1,60 @@
-// Add event listeners to "READ LATER" buttons
-const readLaterButtons = document.querySelectorAll('.read-later-button');
+// import article_link from "./news-data.mjs";
+// Define an array to store the read later items
+let readLaterItems = [];
 
-export function readLater () {
-    readLaterButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const menuItem = this.parentElement.querySelector('span').textContent;
-            saveMenuItem(menuItem);
-        });
-    });
-};
-// Function to save the menu item to local storage
-function saveMenuItem(title) {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    savedItems.push(title);
-    localStorage.setItem('savedItems', JSON.stringify(savedItems));
-    updateSidebar();
+ // Function to save the read later item to a JSON file
+function saveReadLaterItem(item) {
+    readLaterItems.push(item);
+   // Assuming you want to save to local storage, you can replace this with your server endpoint
+    localStorage.setItem('readLaterItems', JSON.stringify(readLaterItems));
 }
 
-// Function to update the sidebar menu
-function updateSidebar() {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+ // Function to display the read later items in the dropdown container
+function displayReadLaterItems() {
+    const dropdownContainer = document.querySelector('.dropdown-container');
+    dropdownContainer.innerHTML = '';
 
-    const sidebar = document.getElementById('saved-items');
-    sidebar.innerHTML = '';
-
-    savedItems.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        listItem.addEventListener('click', function () {
-            openLink(item); // Implement the openLink function to handle navigation.
-        });
-        sidebar.appendChild(listItem);
-    });
+readLaterItems.forEach((item, index) => {
+    const listItem = document.createElement('div');
+    listItem.innerHTML = `
+        <span class="title">${item.title}</span>
+        <a href="${item.link}">Link ${index + 1}</a>
+        <span class="remove-item" data-index="${index}">X</span>
+        `;
+    dropdownContainer.appendChild(listItem);
+});
 }
 
-// Implement the openLink function to handle navigation when a sidebar item is clicked
-function openLink(item) {
-    // You need to define the URLs for each menu item and navigate to the appropriate page.
-    // You can use a switch statement or an object mapping for this.
-    switch (item) {
-        case "Menu Item 1":
-            window.location.href = "link_to_menu_item_1.html";
-            break;
-        case "Menu Item 2":
-            window.location.href = "link_to_menu_item_2.html";
-            break;
-        // Add more cases as needed.
+ // Function to handle removing a read later item
+function removeReadLaterItem(index) {
+    readLaterItems.splice(index, 1);
+    localStorage.setItem('readLaterItems', JSON.stringify(readLaterItems));
+    displayReadLaterItems();
+}
+
+ // Add click event listener to the "Leer Luego" button
+const readLaterButton = document.querySelector('.read_later');
+readLaterButton.addEventListener('click', () => {
+    const title = document.querySelector('.title_t').innerText;
+    // const link = article_link; // You can customize this part
+
+    if (title && link) {
+        saveReadLaterItem({ title, link });
+        displayReadLaterItems();
     }
-}
+});
 
-// Initialize the sidebar on page load
-updateSidebar();
+ // Add click event listener for removing items
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-item')) {
+        const index = e.target.getAttribute('data-index');
+        removeReadLaterItem(index);
+    }
+});
 
+ // Load read later items from local storage on page load
+const storedItems = JSON.parse(localStorage.getItem('readLaterItems'));
+    if (storedItems) {
+    readLaterItems = storedItems;
+    displayReadLaterItems();
+    }
