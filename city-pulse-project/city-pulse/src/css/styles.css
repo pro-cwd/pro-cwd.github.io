@@ -10,6 +10,27 @@
 
 }
 
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    font-style: normal;
+    color: var(--black);
+}
+
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+  }
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -122,12 +143,13 @@ body {
 .sidenav {
     height: 100%;
     padding-top: 20px;
+    padding-left: 10px;
     margin-right: 15%;
 }
 
 /* Style the sidenav links and the dropdown button */
 .sidenav a, .dropdown-btn {
-    padding: 6px 8px 6px 45px;
+    padding: 6px 8px 6px 0px;
     font-size: 1rem;
     display: block;
     border: none;
@@ -156,6 +178,10 @@ body {
 .dropdown-container {
     display: none;
     padding-left: 8px;
+}
+
+.dropdown-container ul {
+    padding-inline-start: 10px;
 }
 
 /* section newsk */
@@ -228,3 +254,25 @@ section h4, .section__data {
 .later-margin {
     margin-top: 2rem;
 }
+
+.late-style {
+    display: flex;
+    align-items: center;
+}
+
+.late-style a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.late-style .remove-item {
+    cursor: pointer;
+}
+
+i.material-icons {
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+  i.material-icons:hover {
+    transform: translateY(-2px); /* Adjust the value to control the movement */
+  }  

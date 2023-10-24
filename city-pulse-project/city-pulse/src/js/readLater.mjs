@@ -11,15 +11,16 @@ function saveReadLaterItem(item) {
 
  // Function to display the read later items in the dropdown container
 function displayReadLaterItems() {
-    const dropdownContainer = document.querySelector('.dropdown-container');
+    const dropdownContainer = document.querySelector('.dropdown-later');
     dropdownContainer.innerHTML = '';
 
 readLaterItems.forEach((item, index) => {
     const listItem = document.createElement('div');
+    listItem.setAttribute("class", "late-style")
     listItem.innerHTML = `
-        <span class="title">${item.title}</span>
-        <a href="${item.link}">Link ${index + 1}</a>
-        <span class="remove-item" data-index="${index}">X</span>
+        <a href="${item.link}" class="title"> ${item.title}</a>
+      
+        <span class="remove-item" data-index=" ${index}">X</span>
         `;
     dropdownContainer.appendChild(listItem);
 });
@@ -36,8 +37,10 @@ readLaterItems.forEach((item, index) => {
   readLaterButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
       const titleElement = button.closest('.grid__box').querySelector('.title_t');
+      const titleLink = button.closest('.grid__box').querySelector("a").getAttribute('href');
+      console.log(titleLink)
       const title = titleElement.innerText;
-      const link = index; // You can customize this part
+      const link = titleLink; // You can customize this part
 
       if (title && link) {
         saveReadLaterItem({ title, link });

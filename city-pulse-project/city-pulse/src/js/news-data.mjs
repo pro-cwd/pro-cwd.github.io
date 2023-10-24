@@ -5,7 +5,6 @@ export function displayResults(data) {
     const newsContainer = document.getElementById("news-container");
     const articles = data.results;
     
-    
     articles.forEach((article) => {
         const sectionElement = document.createElement("section");
         sectionElement.setAttribute("class", "sec__margin");
@@ -22,8 +21,8 @@ export function displayResults(data) {
         <small class="grid__data flex__data">
         <div id="dateTag" class="date">${article.pubDate}</div>
         <div class="publish">${article.source_id}</div>
+        <a class="get-href" href="${article.link}" target="_blank">Read more</a>
         </small>
-        <a href="${article.link}" target="_blank">Read more</a>
         <div class="grid__img">
         <img style="background-color: black;" width="186" height="112" src="./images/Image1.png" alt="img. new">
         </div>

@@ -1,5 +1,5 @@
 import { dropDown } from "./aside";
-import  { readLater } from "./readLater.mjs";
+// import  { readLater } from "./readLater.mjs";
 
 export function themeMenu(data) {
     const themeResult = document.getElementById("theme-title");
@@ -40,7 +40,9 @@ export function themeMenu(data) {
             const themeList = document.createElement("ul");
             relatedThemes.forEach((relatedTheme) => {
                 const listItem = document.createElement("li");
-                listItem.innerHTML = `<a href="${relatedTheme.link}">${relatedTheme.title}</a>`;
+                listItem.innerHTML = `<a href="${relatedTheme.link}"><span class="material-symbols-outlined">
+                arrow_circle_right
+                </span> ${relatedTheme.title}</a>`;
                 themeList.appendChild(listItem);
             });
             dropElement.appendChild(themeList);
@@ -58,12 +60,12 @@ export function themeMenu(data) {
                 <i class="arrow rotateArrow"><i class="material-icons">bookmark_border</i></i>
             </i>
         </button>
-        <div class="dropdown-container"></div>
+        <div class="dropdown-later"></div>
     `;
     themelater.appendChild(laterElement);
 
     dropDown();
-    readLater();
+    // readLater();
 }
 
 

@@ -1,6 +1,6 @@
 import { displayResults } from "./news-data.mjs";
-import { themeMenu } from "./filterMenu.mjs" // Import the displayResults function
-import  { readLater } from "./readLater.mjs";
+import { themeMenu } from "./filterMenu.mjs"; // Import the displayResults function
+import { readLater } from "./readLater.mjs";
 
 export default class NewsFetcher {
   constructor(apiKey, country) {
@@ -17,6 +17,7 @@ export default class NewsFetcher {
         console.log("datos", data);
         displayResults(data);
         themeMenu(data);
+        readLater();
       } else {
         throw Error(await response.text());
       }
@@ -25,4 +26,3 @@ export default class NewsFetcher {
     }
   }
 }
-readLater();
