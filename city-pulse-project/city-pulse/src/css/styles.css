@@ -54,11 +54,14 @@ body {
 .label__section {
     background-color: var(--backg);
     grid-column: 1 / 2;
-    /* position: fixed; */
+    position: fixed;
+    top: 0px;
+    width: 23%;
+    height: 100vh;
 }
 
 .label__section-inter h3 {
-    padding: 0 50px;
+    padding: 0 20px;
 }
 
 /* .drop-section {
@@ -143,7 +146,7 @@ body {
 .sidenav {
     height: 100%;
     padding-top: 20px;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-right: 15%;
 }
 
@@ -276,3 +279,10 @@ i.material-icons {
   i.material-icons:hover {
     transform: translateY(-2px); /* Adjust the value to control the movement */
   }  
+
+  .fixed{position:fixed; top:0}
+
+  /* CSS for icon color change */
+.icon-clicked {
+    color: var(--highlight); /* Change this to your desired color */
+  }
