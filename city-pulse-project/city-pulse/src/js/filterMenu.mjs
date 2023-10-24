@@ -1,5 +1,4 @@
-import { dropDown } from "./aside";
-// import  { readLater } from "./readLater.mjs";
+import { dropDown } from "./aside.js";
 
 export function themeMenu(data) {
     const themeResult = document.getElementById("theme-title");
@@ -65,7 +64,6 @@ export function themeMenu(data) {
     themelater.appendChild(laterElement);
 
     dropDown();
-    // readLater();
 }
 
 

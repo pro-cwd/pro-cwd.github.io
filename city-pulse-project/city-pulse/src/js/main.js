@@ -1,4 +1,4 @@
-import { dropDown } from "./aside";
+import { dropDown } from "./aside.js";
 import NewsFetcher from "./product.mjs";
 
 const apiKey = import.meta.env.VITE_APIKEY;
