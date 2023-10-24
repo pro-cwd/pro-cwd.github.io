@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # users-passwords
-.env
+*.env
