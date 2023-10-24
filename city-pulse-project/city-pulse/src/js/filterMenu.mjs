@@ -1,7 +1,9 @@
 import { dropDown } from "./aside";
+import  { readLater } from "./readLater.mjs";
 
 export function themeMenu(data) {
     const themeResult = document.getElementById("theme-title");
+    const themelater = document.getElementById("theme-later");
     const themes = data.results;
 
     // Use a Set to keep track of unique parent content
@@ -45,8 +47,23 @@ export function themeMenu(data) {
             themeResult.appendChild(buttonElement);
             themeResult.appendChild(dropElement);
         }
+        
     });
+    
+    const laterElement = document.createElement("div");
+    laterElement.setAttribute("class", "sidenav")
+    laterElement.innerHTML= `
+        <button class="dropdown-btn lineArrow sidenav">Leer Luego
+            <i class="arrow-container">
+                <i class="arrow rotateArrow"><i class="material-icons">bookmark_border</i></i>
+            </i>
+        </button>
+        <div class="dropdown-container"></div>
+    `;
+    themelater.appendChild(laterElement);
+
     dropDown();
+    readLater();
 }
 
 

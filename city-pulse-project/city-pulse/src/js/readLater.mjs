@@ -1,7 +1,7 @@
-// import article_link from "./news-data.mjs";
 // Define an array to store the read later items
 let readLaterItems = [];
 
+export function readLater() {
  // Function to save the read later item to a JSON file
 function saveReadLaterItem(item) {
     readLaterItems.push(item);
@@ -24,37 +24,40 @@ readLaterItems.forEach((item, index) => {
     dropdownContainer.appendChild(listItem);
 });
 }
-
  // Function to handle removing a read later item
-function removeReadLaterItem(index) {
+ function removeReadLaterItem(index) {
     readLaterItems.splice(index, 1);
     localStorage.setItem('readLaterItems', JSON.stringify(readLaterItems));
     displayReadLaterItems();
-}
+  }
 
- // Add click event listener to the "Leer Luego" button
-const readLaterButton = document.querySelector('.read_later');
-readLaterButton.addEventListener('click', () => {
-    const title = document.querySelector('.title_t').innerText;
-    // const link = article_link; // You can customize this part
+  // Add click event listeners to all elements with the class "read_later"
+  const readLaterButtons = document.querySelectorAll('.read_later');
+  readLaterButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const titleElement = button.closest('.grid__box').querySelector('.title_t');
+      const title = titleElement.innerText;
+      const link = index; // You can customize this part
 
-    if (title && link) {
+      if (title && link) {
         saveReadLaterItem({ title, link });
         displayReadLaterItems();
-    }
-});
+      }
+    });
+  });
 
- // Add click event listener for removing items
-document.addEventListener('click', (e) => {
+  // Add click event listener for removing items
+  document.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-item')) {
-        const index = e.target.getAttribute('data-index');
-        removeReadLaterItem(index);
+      const index = e.target.getAttribute('data-index');
+      removeReadLaterItem(index);
     }
-});
+  });
 
- // Load read later items from local storage on page load
-const storedItems = JSON.parse(localStorage.getItem('readLaterItems'));
-    if (storedItems) {
+  // Load read later items from local storage on page load
+  const storedItems = JSON.parse(localStorage.getItem('readLaterItems'));
+  if (storedItems) {
     readLaterItems = storedItems;
     displayReadLaterItems();
-    }
+  }
+}
