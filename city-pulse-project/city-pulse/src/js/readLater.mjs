@@ -49,14 +49,6 @@ readLaterItems.forEach((item, index) => {
     });
   });
 
-  // Add click event listener for removing items
-  // document.addEventListener('click', (e) => {
-  //   if (e.target.classList.contains('remove-item')) {
-  //     const index = e.target.getAttribute('data-index');
-  //     removeReadLaterItem(index);
-  //   }
-  // });
-
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-item')) {
       const index = e.target.getAttribute('data-index');
