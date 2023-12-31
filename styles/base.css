@@ -73,6 +73,10 @@ header {
   margin: 1em;
 }
 
+#header-text {
+  margin-top: 1em;
+}
+
 #header-text h1 {
   text-align: center;
   /* padding-left: 1em; */
@@ -215,14 +219,13 @@ footer p {
 h1 {
   font-size: 38px;
   font-weight: bold;
-  margin: auto 0;
+  margin: auto 0 !important;
 }
 
 h2 {
   font-size: 20px;
   font-weight: bold;
   margin: 15px 0;
-  padding-left: 1em;
 }
 
 h3 {
