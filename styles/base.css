@@ -467,6 +467,7 @@ figure:hover+span {
 .about-text-config {
   max-width: 600px;
   padding-right: 3em;
+  padding-left: 3em;
 }
 
 .principal-text {
