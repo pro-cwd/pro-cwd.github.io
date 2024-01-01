@@ -1,64 +1,78 @@
 const currentYear = new Date().getFullYear();
-const currentYearElement = document.getElementById('currentYear');
+const currentYearElement = document.getElementById("currentYear");
 currentYearElement.textContent = currentYear;
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const modeButton = document.querySelector(".material-symbols-outlined");
 const body = document.querySelector("body");
-const h1 = document.querySelector("h1")
+const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
+const h3 = document.querySelector("h3");
+const h4 = document.querySelector("h4");
+const h5 = document.querySelector("h5");
 
 // JavaScript code to populate current year and last modified date
 const lastModifiedDate = new Date(document.lastModified);
-const lastModifiedElement = document.getElementById('lastModified');
-lastModifiedElement.textContent = 'Last modified: ' + lastModifiedDate.toLocaleString();
+const lastModifiedElement = document.getElementById("lastModified");
+lastModifiedElement.textContent =
+  "Last modified: " + lastModifiedDate.toLocaleString();
 
 // Ham Icon
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-})
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
 
 // darkmode
-modeButton.addEventListener('click', () => {
-	// modeButton.textContent = 'sunny'
-	if (modeButton.textContent.includes('dark_mode')) {
-		body.style.background = "#212121";
-		body.style.color = "#fff";
-		h1.style.color = "#fff";
-		body.style.transition = '2s';
-		modeButton.textContent = 'sunny';
-	}else {
-		body.style.background = '#f7f7f8';
-		body.style.color = '#212121';
-		body.style.h1 = "#212121";
-		modeButton.textContent = 'dark_mode';
-		h1.style.color = "#212121";
-		body.style.transition = '2s';
-	}
-})
+modeButton.addEventListener("click", () => {
+  // modeButton.textContent = 'sunny'
+  if (modeButton.textContent.includes("dark_mode")) {
+    body.style.background = "#212121";
+    body.style.color = "#fff";
+    h1.style.color = "#fff";
+    // h2.style.color = "#fff";
+    // h3.style.color = "#fff";
+    // h4.style.color = "#fff";
+    // h5.style.color = "#fff";
+    body.style.transition = "2s";
+    modeButton.textContent = "sunny";
+  } else {
+    body.style.background = "#f7f7f8";
+    body.style.color = "#212121";
+    body.style.h1 = "#212121";
+    modeButton.textContent = "dark_mode";
+    h1.style.color = "#212121";
+    //h2.style.color = "#212121";
+    //h3.style.color = "#3C9FBD";
+    //h4.style.color = "#212121";
+    //h5.style.color = "#212121";
+    body.style.transition = "2s";
+  }
+});
 
 // coutner
 
 // Check if localStorage is supported
-if (typeof(Storage) !== "undefined") {
-	// Check if the counter value is stored in localStorage
-	if (localStorage.counter) {
-	  // If the value exists, update the counter element with its value
-	  document.getElementById("counter").textContent = localStorage.counter;
-	} else {
-	  // If the value doesn't exist, initialize the counter in localStorage with 0
-	  localStorage.counter = 0;
-	}
-
-	// Increment the counter value and update the counter element
-	function incrementCounter() {
-	  localStorage.counter++;
-	  document.getElementById("counter").textContent = localStorage.counter;
-	}
-
-	// Call the incrementCounter function whenever the page is visited
-	incrementCounter();
+if (typeof Storage !== "undefined") {
+  // Check if the counter value is stored in localStorage
+  if (localStorage.counter) {
+    // If the value exists, update the counter element with its value
+    document.getElementById("counter").textContent = localStorage.counter;
   } else {
-	// If localStorage is not supported, display an error message
-	document.getElementById("counter").textContent = "localStorage is not supported.";
+    // If the value doesn't exist, initialize the counter in localStorage with 0
+    localStorage.counter = 0;
   }
+
+  // Increment the counter value and update the counter element
+  function incrementCounter() {
+    localStorage.counter++;
+    document.getElementById("counter").textContent = localStorage.counter;
+  }
+
+  // Call the incrementCounter function whenever the page is visited
+  incrementCounter();
+} else {
+  // If localStorage is not supported, display an error message
+  document.getElementById("counter").textContent =
+    "localStorage is not supported.";
+}
