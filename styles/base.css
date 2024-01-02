@@ -471,3 +471,16 @@ figure:hover+span {
   line-height: 1.5em;
 }
 
+.cer-button:link, .cer-button:visited {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.cer-button:hover, .cer-button:active {
+  background-color: var(--accent1-color);
+}
