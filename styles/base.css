@@ -471,6 +471,12 @@ figure:hover+span {
   line-height: 1.5em;
 }
 
+.btn-pdf {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  
+}
+
 .cer-button:link, .cer-button:visited {
   background-color: var(--primary-color);
   color: white;
@@ -479,6 +485,7 @@ figure:hover+span {
   text-decoration: none;
   display: inline-block;
   margin-top: 1em;
+  border-radius: 5px;
 }
 
 .cer-button:hover, .cer-button:active {
