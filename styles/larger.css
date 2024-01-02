@@ -1,3 +1,22 @@
+@media screen and (max-width: 270px) {
+  .column {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .about-text {
+      flex-direction: column;
+    }
+    .principal-text h2 {
+      margin: 15px 30px;
+    }
+    .about-text-config {
+      padding: 3em;
+    }
+  }
+  
+
 @media screen and (max-width: 576px){
     
     nav ul {
@@ -62,7 +81,7 @@
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 200px;
+        top: 207px;
         width: 100%;
         gap: 0;
         transition: 0.3s;
