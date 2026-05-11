@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Omar Meza | Graphic Designer Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Omar Meza — Graphic Designer, UI/UX Designer and Web Developer specialized in branding, social media and digital experiences."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+  />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent2: #8b5cf6;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --container: 1280px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #020617;
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(18px);
+      background: rgba(2, 6, 23, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-area img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.15);
+    }
+
+    .logo-text h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .logo-text p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .carousel {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: slider 18s infinite;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.35);
+    }
+
+    .slide:nth-child(2) {
+      animation-delay: 6s;
+    }
+
+    .slide:nth-child(3) {
+      animation-delay: 12s;
+    }
+
+    @keyframes slider {
+      0% {
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 1;
+      }
+      38% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(2, 6, 23, 0.35),
+          rgba(2, 6, 23, 0.95)
+        );
+      z-index: -1;
+    }
+
+    .hero-content {
+      width: min(92%, 1280px);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+    }
+
+    .hero-text h2 span {
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent2)
+      );
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title span {
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-top: 1rem;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* GRID */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: 0.4s;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* EMBEDS */
+
+    .embed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 2rem;
+    }
+
+    .embed-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .embed-card iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero-content,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 8rem 0 5rem;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h2 {
+        font-size: 3rem;
+      }
+
+      .embed-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .embed-card iframe {
+        height: 420px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container header-content">
+
+      <div class="logo-area">
+        <img
+          src="images/omarmeza.webp"
+          alt="Omar Meza portrait"
+        />
+
+        <div class="logo-text">
+          <h1>Omar Meza</h1>
+          <p>Graphic Designer · UI/UX · Fullstack</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#branding">Branding</a></li>
+          <li><a href="#logos">Logos</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <!-- CAROUSEL -->
+
+    <div class="carousel">
+
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+          alt="Graphic Design Studio"
+        />
+      </div>
+
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop"
+          alt="Creative Workspace"
+        />
+      </div>
+
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
+          alt="UI UX Design Process"
+        />
+      </div>
+
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-text">
+
+        <h2>
+          Graphic Design
+          <span>Portfolio</span>
+        </h2>
+
+        <p>
+          I create visual identities, social media campaigns,
+          branding systems and digital experiences focused on
+          creativity, strategy and strong visual communication.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            href="images/resumme-proweb.pdf"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            Download Resume
+          </a>
+
+          <a
+            href="images/1361378_eDiploma.pdf"
+            class="btn btn-secondary"
+            target="_blank"
+          >
+            View Certificate
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <img
+          src="images/hombre_diseno.png"
+          alt="Omar Meza working"
+        />
+
+        <h3>17+ Years of Experience</h3>
+
+        <p>
+          Specialized in graphic design, branding,
+          UI/UX interfaces and digital marketing content.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="container">
+
+    <div class="section-title">
+      <span>About Me</span>
+      <h2>Creative Designer & Developer</h2>
+    </div>
+
+    <div class="about">
+
+      <img
+        src="images/hombre_diseno.png"
+        alt="Graphic designer workspace"
+      />
+
+      <div>
+
+        <p>
+          I am a Graphic Designer and UI/UX Designer with
+          more than 17 years of freelance experience creating
+          visual solutions for brands, businesses and digital projects.
+        </p>
+
+        <p>
+          My work combines creativity, branding strategy and
+          modern web technologies to create engaging and professional
+          visual experiences.
+        </p>
+
+        <p>
+          I specialize in social media design, corporate identity,
+          brochures, digital advertising and responsive web interfaces.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOCIAL MEDIA -->
+
+  <section id="portfolio" class="container">
+
+    <div class="section-title">
+      <span>Portfolio</span>
+      <h2>Social Media Design</h2>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <article class="card">
+        <img src="images/post-autos-h.avif" alt="">
+        <div class="card-content">
+          <h3>Automotive Campaign</h3>
+          <p>Advertising design for automotive services.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/grincho-web-face.avif" alt="">
+        <div class="card-content">
+          <h3>Theatrical Promotion</h3>
+          <p>Creative social media content strategy.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/post-black-friday-hsl-hh.avif" alt="">
+        <div class="card-content">
+          <h3>Health Services</h3>
+          <p>High-conversion visual campaign design.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/SOY_AIRE_WTSP_IMG_PERFIL.avif" alt="">
+        <div class="card-content">
+          <h3>Creative Branding</h3>
+          <p>Modern visual identity for digital platforms.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/post-pa-7.avif" alt="">
+        <div class="card-content">
+          <h3>Construction Services</h3>
+          <p>Corporate social media campaign.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/nahuel.avif" alt="">
+        <div class="card-content">
+          <h3>Feedback Campaign</h3>
+          <p>Creative visual storytelling strategy.</p>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- BRANDING -->
+
+  <section id="branding" class="container">
+
+    <div class="section-title">
+      <span>Branding</span>
+      <h2>Corporate Identity</h2>
+    </div>
+
+    <div class="embed-grid">
+
+      <div class="embed-card">
+        <iframe
+          src="https://online.fliphtml5.com/nbqjl/wizn/"
+          title="Corporate Identity 1"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="embed-card">
+        <iframe
+          src="https://online.fliphtml5.com/nbqjl/rfaq/"
+          title="Corporate Identity 2"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BROCHURES -->
+
+  <section class="container">
+
+    <div class="section-title">
+      <span>Editorial</span>
+      <h2>Brochure Design</h2>
+    </div>
+
+    <div class="embed-grid">
+
+      <div class="embed-card">
+        <iframe
+          src="https://online.fliphtml5.com/nbqjl/azaa/"
+          title="Brochure 1"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="embed-card">
+        <iframe
+          src="https://online.fliphtml5.com/nbqjl/selj/"
+          title="Brochure 2"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LOGOS -->
+
+  <section id="logos" class="container">
+
+    <div class="section-title">
+      <span>Identity</span>
+      <h2>Logo Design</h2>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <article class="card">
+        <img src="images/alissoncarbonlogo_color.avif" alt="">
+        <div class="card-content">
+          <h3>Alisson Carbon</h3>
+          <p>Brand identity and logo design.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/andrea-logo.avif" alt="">
+        <div class="card-content">
+          <h3>Andrea</h3>
+          <p>Minimal and elegant branding concept.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/LOGO_ARIZDENT.avif" alt="">
+        <div class="card-content">
+          <h3>Arizdent</h3>
+          <p>Corporate logo development.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/logo_figueras_vertical.avif" alt="">
+        <div class="card-content">
+          <h3>Figueras</h3>
+          <p>Professional brand system.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/kadi.avif" alt="">
+        <div class="card-content">
+          <h3>Kadi</h3>
+          <p>Creative logo conceptualization.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/rodaltor-logotipo-final.jpg" alt="">
+        <div class="card-content">
+          <h3>Rodaltor</h3>
+          <p>Final logo and brand guideline design.</p>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 Omar Meza · Quito, Ecuador
+        <span class="fi fi-ec"></span>
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

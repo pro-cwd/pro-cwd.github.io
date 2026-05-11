@@ -1,0 +1,90 @@
+{
+    "weeks": [
+      {
+        "week": "Week 1",
+        "links": [
+          {
+            "url": "https://github.com/pro-cwd/skills-introduction-to-github",
+            "title": "Introduction to github"
+          },
+          {
+            "url": "https://run.plnkr.co/preview/clmjl5p1r00043b6pfdtyl4xb/",
+            "title": "object Method this"
+          },
+          {
+            "url": "https://codepen.io/pro-cwd/pen/zYypaEq",
+            "title": "The window object"
+          }
+        ]
+      },
+      {
+        "week": "Week 2",
+        "links": [
+          {
+            "url": "https://github.com/pro-cwd/pro-cwd.github.io/blob/main/week2/content-template-element.html",
+            "title": "Template element"
+          },
+          {
+            "url": "#",
+            "title": "W2"
+          },
+          {
+            "url": "#",
+            "title": "W2"
+          }
+        ]
+      },
+      {
+        "week": "Week 3",
+        "links": [
+          {
+            "url": "https://codepen.io/pro-cwd/pen/zYyjVzv",
+            "title": "Forms"
+          },
+          {
+            "url": "https://pro-cwd.github.io/week3/form.html",
+            "title": "FormData Object"
+          },
+          {
+            "url": "https://pro-cwd.github.io/week3/fetch-basics.html",
+            "title": "Fetch API"
+          }
+        ]
+      },
+      {
+        "week": "Week 4",
+        "links": [
+          {
+            "url": "#",
+            "title": "W4"
+          },
+          {
+            "url": "#",
+            "title": "W4"
+          },
+          {
+            "url": "#",
+            "title": "W4"
+          }
+        ]
+      },
+      {
+        "week": "Week 5",
+        "links": [
+          {
+            "url": "https://pro-cwd.github.io/week5/canvas.html",
+            "title": "Canvas API"
+          },
+          {
+            "url": "https://pro-cwd.github.io/week5/geolocation.html",
+            "title": "Web API"
+          },
+          {
+            "url": "#",
+            "title": "W5"
+          }
+        ]
+      }
+    ]
+  }
+  
